@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -54,18 +53,18 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            FutureBuilder(
-                future:
-                    http.read(Uri.parse('http://127.0.0.1:8080/' /*template*/)),
-                builder:
-                    (BuildContext context, AsyncSnapshot<String> snapshot) {
-                  if (snapshot.hasData) {
-                    String str = snapshot.data!;
-                    return Center(child: Text(str) /*Html(data: str)*/);
-                  } else {
-                    return Center(child: CircularProgressIndicator());
-                  }
-                }),
+            // FutureBuilder(
+            //     future:
+            //         http.read(Uri.parse('http://127.0.0.1:8080/' /*template*/)),
+            //     builder:
+            //         (BuildContext context, AsyncSnapshot<String> snapshot) {
+            //       if (snapshot.hasData) {
+            //         String str = snapshot.data!;
+            //         return Center(child: Text(str) /*Html(data: str)*/);
+            //       } else {
+            //         return Center(child: CircularProgressIndicator());
+            //       }
+            //     }),
           ],
         ),
       ),
